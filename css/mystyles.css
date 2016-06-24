@@ -31,6 +31,10 @@ body{
     color:#000000;
 }
 
+.navbar-form label {
+    color: #fff;
+}
+
 .row-header {
     margin: 0px auto;
     padding: 0px auto;
