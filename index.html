@@ -59,7 +59,7 @@
                     <li><a href="contactus.html"><i class="fa fa-envelope-o"></i> Contact</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a data-toggle="modal" data-target="#loginModal">
+                    <li><a id="login-button">
                     <span class="glyphicon glyphicon-log-in"></span> Login</a>
                     </li>
                 </ul>
@@ -67,7 +67,7 @@
         </div>
     </nav>
     <!-- Login modal -->
-    <div id="loginModal" class="modal fade" role="dialog">
+    <div id="loginmodal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -98,7 +98,7 @@
         </div>
     </div>
     <!-- Reservation form modal -->
-    <div id="reserveform" class="modal fade" role="dialog">
+    <div id="reservemodal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -193,7 +193,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-2">
                     <p style="padding:40px;"></p>
-                    <a type="button" href="#reserveform" class="btn btn-warning btn-block" data-toggle="modal" data-target="#reserveform">Reserve Table</a>
+                    <a type="button" id="reserve-button" class="btn btn-warning btn-block">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -387,12 +387,23 @@
     <script>
         $(document).ready(function() {
             $('#mycarousel').carousel({interval: 2000});
+            // Carousel Pause
             $('#carousel-pause').click(function() {
                 $('#mycarousel').carousel('pause');
             });
+            // Carousel Play
             $('#carousel-play').click(function() {
                 $('#mycarousel').carousel('cycle');
             });
+            // Reserve Table Button
+            $('#reserve-button').click(function() {
+                $('#reservemodal').modal('toggle');
+            });
+            // Login Button
+            $('#login-button').click(function() {
+                $('#loginmodal').modal('toggle');
+            });
+
         });
     </script>
 
